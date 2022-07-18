@@ -30,10 +30,10 @@ export class AuditsComponent implements OnInit {
   public totalCount=0;
 
   ngOnInit():void{
-    this.getUsers(0,10)
+    this.getAudits(0,10)
   }
 
-  public getUsers(pageIndex,pageSize){
+  public getAudits(pageIndex,pageSize){
     this.audit.getAudits(pageIndex,pageSize).subscribe((res:any)=>{
       console.log(res);
       this.dataSource = res.audits;
@@ -45,6 +45,6 @@ export class AuditsComponent implements OnInit {
   }
 
   public pageNavigate(event:PageEvent){
-    this.getUsers(event.pageIndex,event.pageSize);
+    this.getAudits(event.pageIndex,event.pageSize);
   }
 }
